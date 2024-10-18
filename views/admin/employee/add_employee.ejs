@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-mode="detached" data-topbar-color="dark" data-menu-color="light" data-sidenav-user="true">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Project | OTE-Admin Dashboard</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://storage.googleapis.com;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author"/>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/images/O.png" type="text/png">
+
+    <!-- Theme Config Js -->
+    <script src="/js/hyper-config.js"></script>
+
+    <link href="/css/app-modern.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+    <!-- Icons css -->
+    <link href="/css/icons.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+
+
+        <!-- ========== Topbar Start ========== -->
+        <div class="navbar-custom">
+            <div class="topbar container-fluid">
+                <div class="d-flex align-items-center gap-lg-2 gap-1">
+
+                    <!-- Topbar Brand Logo -->
+                    <div class="logo-topbar">
+                        <!-- Logo light -->
+                        <a href="/" class="logo-light">
+                            <span class="logo-lg">
+                                <img src="/images/OTE LOGO NEW.png" alt="logo">
+                            </span>
+                            <span class="logo-sm">
+                                <img src="/images/OTE LOGO NEW.png" alt="small logo">
+                            </span>
+                        </a>
+
+                        <!-- Logo Dark -->
+                        <a href="/" class="logo-dark">
+                            <span class="logo-lg">
+                                <img src="/images/OTE LOGO NEW.png" alt="dark logo">
+                            </span>
+                            <span class="logo-sm">
+                                <img src="/images/OTE LOGO NEW.png" alt="small logo">
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Sidebar Menu Toggle Button -->
+                    <button class="button-toggle-menu">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+
+                    <!-- Horizontal Menu Toggle Button -->
+                    <button class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+
+                    <!-- Topbar Search Form -->
+                    <div class="app-search dropdown d-none d-lg-block">
+                        <form>
+                            <div class="input-group">
+                                <input type="search" class="form-control dropdown-toggle" placeholder="Search..."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <button class="input-group-text btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </form>
+
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="uil-notes font-16 me-1"></i>
+                                <span>Analytics Report</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="uil-life-ring font-16 me-1"></i>
+                                <span>How can I help you?</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="uil-cog font-16 me-1"></i>
+                                <span>User profile settings</span>
+                            </a>
+
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
+                            </div>
+
+                            <div class="notification-list">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="d-flex">
+                                        <img class="d-flex me-2 rounded-circle" src="/images/users/avatar-2.jpg"
+                                            alt="Generic placeholder image" height="32">
+                                        <div class="w-100">
+                                            <h5 class="m-0 font-14">Erwin Brown</h5>
+                                            <span class="font-12 mb-0">UI Designer</span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="d-flex">
+                                        <img class="d-flex me-2 rounded-circle" src="/images/users/avatar-5.jpg"
+                                            alt="Generic placeholder image" height="32">
+                                        <div class="w-100">
+                                            <h5 class="m-0 font-14">Jacob Deo</h5>
+                                            <span class="font-12 mb-0">Developer</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="topbar-menu d-flex align-items-center gap-3">
+                    <li class="dropdown d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            <i class="ri-search-line font-22"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                            <form class="p-3">
+                                <input type="search" class="form-control" placeholder="Search ..."
+                                    aria-label="Recipient's username">
+                            </form>
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            <i class="ri-notification-3-line font-22"></i>
+                            <span class="noti-icon-badge"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0 font-16 fw-semibold"> Notification</h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                            <small>Clear All</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-2" style="max-height: 300px;" data-simplebar>
+
+                                <h5 class="text-muted font-13 fw-normal mt-2">Today</h5>
+                                <!-- item-->
+
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-2">
+                                    <div class="card-body">
+                                        <span class="float-end noti-close-btn text-muted"><i
+                                                class="mdi mdi-close"></i></span>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon bg-primary">
+                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp <small
+                                                        class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on
+                                                    Admin</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
+                                    <div class="card-body">
+                                        <span class="float-end noti-close-btn text-muted"><i
+                                                class="mdi mdi-close"></i></span>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon bg-info">
+                                                    <i class="mdi mdi-account-plus"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">Admin <small
+                                                        class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">New user registered</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <h5 class="text-muted font-13 fw-normal mt-0">Yesterday</h5>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
+                                    <div class="card-body">
+                                        <span class="float-end noti-close-btn text-muted"><i
+                                                class="mdi mdi-close"></i></span>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon">
+                                                    <img src="/images/users/avatar-2.jpg"
+                                                        class="img-fluid rounded-circle" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">Chaitanya Pandita <small
+                                                        class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about
+                                                    our next meeting</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <h5 class="text-muted font-13 fw-normal mt-0">30 Dec 2021</h5>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
+                                    <div class="card-body">
+                                        <span class="float-end noti-close-btn text-muted"><i
+                                                class="mdi mdi-close"></i></span>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon bg-primary">
+                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on
+                                                    Admin</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
+                                    <div class="card-body">
+                                        <span class="float-end noti-close-btn text-muted"><i
+                                                class="mdi mdi-close"></i></span>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon">
+                                                    <img src="/images/users/avatar-4.jpg"
+                                                        class="img-fluid rounded-circle" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good
+                                                    and awesome design</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="text-center">
+                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                                </div>
+                            </div>
+
+                            <!-- All-->
+                            <a href="javascript:void(0);"
+                                class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                View All
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="d-none d-sm-inline-block">
+                        <a class="nav-link" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                            <i class="ri-settings-3-line font-22"></i>
+                        </a>
+                    </li>
+
+                    <li class="d-none d-sm-inline-block">
+                        <div class="nav-link" id="light-dark-mode" data-bs-toggle="tooltip" data-bs-placement="left"
+                            title="Theme Mode">
+                            <i class="ri-moon-line font-22"></i>
+                        </div>
+                    </li>
+
+
+                    <li class="d-none d-md-inline-block">
+                        <a class="nav-link" href="#" data-toggle="fullscreen">
+                            <i class="ri-fullscreen-line font-22"></i>
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
+                            <span class="account-user-avatar">
+                                <img src="<%= image %>" alt="user-image" width="32"
+                                    class="rounded-circle">
+                            </span>
+                            <span class="d-lg-flex flex-column gap-1 d-none">
+                                <h5 class="my-0">Anand Jethava</h5>
+                                <h6 class="my-0 fw-normal">Full Stack Developer</h6>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
+                            <!-- item-->
+                            <div class=" dropdown-header noti-title">
+                                <h6 class="text-overflow m-0">Welcome !</h6>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="mdi mdi-account-circle me-1"></i>
+                                <span>My Account</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="mdi mdi-account-edit me-1"></i>
+                                <span>Settings</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="mdi mdi-lifebuoy me-1"></i>
+                                <span>Support</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="mdi mdi-lock-outline me-1"></i>
+                                <span>Lock Screen</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="mdi mdi-logout me-1"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ========== Topbar End ========== -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="leftside-menu">
+
+            <!-- Brand Logo Light -->
+            <a href="index.html" class="logo logo-light">
+                <span class="logo-lg">
+                    <img src="/images/OTE LOGO NEW.png" alt="logo">
+                </span>
+                <span class="logo-sm">
+                    <img src="/images/OTE LOGO NEW.png" alt="small logo">
+                </span>
+            </a>
+
+            <!-- Brand Logo Dark -->
+            <a href="index.html" class="logo logo-dark">
+                <span class="logo-lg">
+                    <img src="/images/OTE LOGO NEW.png" alt="dark logo">
+                </span>
+                <span class="logo-sm">
+                    <img src="/images/OTE LOGO NEW.png" alt="small logo">
+                </span>
+            </a>
+
+            <!-- Sidebar Hover Menu Toggle Button -->
+            <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" title="Show Full Sidebar">
+                <i class="ri-checkbox-blank-circle-line align-middle"></i>
+            </div>
+
+            <!-- Full Sidebar Menu Close Button -->
+            <div class="button-close-fullsidebar">
+                <i class="ri-close-fill align-middle"></i>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="h-100" id="leftside-menu-container" data-simplebar>
+                <!-- Leftbar User -->
+                <div class="leftbar-user">
+
+                </div>
+
+                <!--- Sidemenu -->
+                <ul class="side-nav">
+                    <li class="side-nav-item">
+                        <a href="/admin" class="side-nav-link">
+                            <i class="ri-home-2-line"></i>
+                            <span> Dashboard </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/admin/employee" class="side-nav-link">
+                            <i class="ri-task-line"></i>
+                            <span> Employee </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/admin/attendance" class="side-nav-link">
+                            <i class="ri-survey-line"></i>
+                            <span> Attendance </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/admin/task" class="side-nav-link">
+                            <i class="ri-task-line"></i>
+                            <span> Task </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/admin/project" class="side-nav-link">
+                            <i class="uil-briefcase"></i>
+                            <span> Project </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/admin/chat" class="side-nav-link">
+                            <i class="uil-comments-alt"></i>
+                            <span> Chat </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/admin/calender" class="side-nav-link">
+                            <i class="uil-calender"></i>
+                            <span> Calender </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/" class="side-nav-link">
+                            <i class="ri-file-text-line"></i>
+                            <span> Management </span>
+                        </a>
+                    </li>
+                </ul>
+                <!--- End Sidemenu -->
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- ========== Left Sidebar End ========== -->
+
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <h4 class="header-title mb-3">Add Employee</h4>
+
+                                    <form action="/user/add_employee" method="post" enctype="multipart/form-data">
+                                        <div id="progressbarwizard">
+
+                                            <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#account-2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <i class="mdi mdi-account-circle font-18 align-middle me-1"></i>
+                                                        <span class="d-none d-sm-inline">Personal Information</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#role-information" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <i class="mdi mdi-face-man-profile font-18 align-middle me-1"></i>
+                                                        <span class="d-none d-sm-inline">Role Information</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile-tab-2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <i class="mdi mdi-checkbox-marked-circle-outline font-18 align-middle me-1"></i>
+                                                        <span class="d-none d-sm-inline">Documentation</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#finish-2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <i class="mdi mdi-checkbox-marked-circle-outline font-18 align-middle me-1"></i>
+                                                        <span class="d-none d-sm-inline">Finish</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content b-0 mb-0">
+
+                                                <div id="bar" class="progress mb-3" style="height: 3px;">
+                                                    <div class="bar progress-bar progress-bar-striped progress-bar-animated"></div>
+                                                </div>
+
+                                                <div class="tab-pane" id="account-2">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="firstName">First Name</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter a first name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="lastName">Last Name</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter a last name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="lastName">Gender</label>
+                                                                <div class="col-md-9">
+                                                                    <select class="form-select" name="gender" id="example-select">
+                                                                        <option>Select a Gender</option>
+                                                                        <option value="male">Male</option>
+                                                                        <option value="female">Female</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="phone">Phone</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter a phone number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="confirm1">Email</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="email" name="email" id="project-budget" class="form-control" placeholder="Enter a email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="confirm1">Password</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="password" name="password" id="project-budget" class="form-control" placeholder="Enter a password">
+                                                                </div>
+                                                            </div>
+
+                                                        </div> <!-- end col -->
+                                                    </div> <!-- end row -->
+
+                                                    <ul class="list-inline wizard mb-0">
+                                                        <li class="next list-inline-item float-end">
+                                                            <a href="javascript:void(0);" class="btn btn-info"> Next <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="tab-pane" id="role-information">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="userName1">Role</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="text" class="form-control" id="userName1" name="roleposition" placeholder="Enter a role position">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="password1">Department</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="text" class="form-control" id="startdate" name="department" placeholder="Enter a department">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="password1">Date of Hire</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="date" class="form-control" id="startdate" name="hiredate">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="confirm1">Employee-Type</label>
+                                                                <div class="col-md-9">
+                                                                    <select class="form-select" name="employeetype" id="example-select">
+                                                                        <option value="">Select a Employee-type</option>
+                                                                        <option value="fulltime">Full-time</option>
+                                                                        <option value="parttime">part-time</option>
+                                                                        <option value="intern">Intern</option>
+                                                                        <option value="contract">Contract</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                    </div> <!-- end row -->
+                                                    <ul class="pager wizard mb-0 list-inline mt-1">
+                                                        <li class="previous list-inline-item">
+                                                            <button type="button" class="btn btn-light"><i class="mdi mdi-arrow-left me-1"></i> Back</button>
+                                                        </li>
+                                                        <li class="next list-inline-item float-end">
+                                                            <button type="button" class="btn btn-info">Next</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="tab-pane" id="profile-tab-2">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="surname1">Upload passport Image</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="file" name="passport" id="example-fileinput" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="surname1">Upload Personal Id</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="file" name="personalid" id="example-fileinput" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <label class="col-md-3 col-form-label" for="surname1">Resume</label>
+                                                                <div class="col-md-9">
+                                                                    <input type="file" name="resume" id="example-fileinput" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                    </div> <!-- end row -->
+                                                    <ul class="pager wizard mb-0 list-inline">
+                                                        <li class="previous list-inline-item">
+                                                            <button type="button" class="btn btn-light"><i class="mdi mdi-arrow-left me-1"></i> Back </button>
+                                                        </li>
+                                                        <li class="next list-inline-item float-end">
+                                                            <button type="button" class="btn btn-info">Next <i class="mdi mdi-arrow-right ms-1"></i></button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="tab-pane" id="finish-2">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="text-center">
+                                                                <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
+                                                                <h3 class="mt-0">Thank you !</h3>
+
+                                                                <div class="mb-3">
+                                                                    <div class="form-check d-inline-block">
+                                                                        <input type="checkbox" class="form-check-input" id="customCheck3" required>
+                                                                        <label class="form-check-label" for="customCheck3">I agree with the Terms and Conditions</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end col -->
+                                                    </div> <!-- end row -->
+                                                    <ul class="pager wizard mb-0 list-inline mt-1">
+                                                        <li class="previous list-inline-item">
+                                                            <button type="button" class="btn btn-light"><i class="mdi mdi-arrow-left me-1"></i> Back </button>
+                                                        </li>
+                                                        <li class="next list-inline-item float-end">
+                                                            <button type="submit" class="btn btn-info">Submit</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div> <!-- tab-content -->
+                                        </div> <!-- end #progressbarwizard-->
+                                    </form>
+                                </div> <!-- end card-body -->
+                            </div>
+                        </div> <!-- end card body-->
+                    </div> <!-- end card -->
+                </div><!-- end col-->
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page Content here -->
+        <!-- ============================================================== -->        
+    </div>
+
+    <script src="/vendor/highlightjs/highlight.pack.min.js"></script>
+    <script src="/vendor/clipboard/clipboard.min.js"></script>
+    <script src="/js/hyper-syntax.js"></script>
+
+    <script src="/js/vendor.min.js"></script>
+
+    <!-- Bootstrap Wizard Form js -->
+    <script src="/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <!-- Wizard Form Demo js -->
+    <script src="/js/pages/demo.form-wizard.js"></script>
+
+    <!-- App js -->
+    <script src="/js/app.min.js"></script>
+
+    <!-- js -->
+    <script src="/js/project/script.js"></script>
+
+    <!-- Bootstrap Datepicker Plugin js -->
+    <script src="/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Select2 js  -->
+    <script src="/vendor/select2/js/select2.min.js"></script>
+
+    <!-- Dropzone File Upload js -->
+    <script src="/vendor/dropzone/dropzone-min.js"></script>
+
+    <!-- init js -->
+    <script src="/js/ui/component.fileupload.js"></script>
+</body>
+
+</html>
