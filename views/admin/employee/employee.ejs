@@ -535,7 +535,7 @@
                                     <% } else { %>
                                         <% User.forEach((user) => { %>
                                             <tr>
-                                                <td><a href="/admin/details"><%= user.name %></a></td>
+                                                <td><a href="/admin/employee_details/<%= user._id %>"><%= user.name %></a></td>
                                                 <td><%= user.position %></td>
                                                 <td>Admin Dashboard</td>
                                                 <td><%= user.status %></td>

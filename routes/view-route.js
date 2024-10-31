@@ -76,7 +76,13 @@ viewrouter.get('/admin/project', verifyToken,async (req, res) => {
 });
 
 viewrouter.get('/admin/create_project', verifyToken,async (req, res) => {
-    res.render('admin/project/create_project', { user: req.user, image: req.image });
+    try {
+        const populateuser = await req.user.populate('employee');
+        res.render('admin/project/create_project', { user: req.user, image: req.image, User: populateuser.employee});
+    }
+    catch (err) {
+        
+    }
 });
 
 viewrouter.get('/admin/calender', verifyToken,async (req, res) => {
@@ -91,11 +97,11 @@ viewrouter.get('/admin/account', verifyToken, async (req, res) => {
     res.render('account', { user: req.user, image: req.image });
 });
 
-viewrouter.get('/admin/employee/:id', async (req, res) => {
+viewrouter.get('/admin/employee_details/:id', verifyToken, async (req, res) => {
     const empid = req.params.id;
-    const user = userSchema.findById(empid);
-    const image = await getBase64FromFirebase(user.img);
-    res.render('admin/employee_detail', user, image);
+    const User = await userSchema.findOne({ _id: empid });
+    const image = await getBase64FromFirebase(User.img);
+    res.render('admin/employee/employee_detail', { emp: req.user, empimg: req.image,  user: User, Image: image } );
 });
 
 // GeneralRouter

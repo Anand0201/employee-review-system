@@ -4,12 +4,10 @@ const projectSchema = mongoose.Schema({
     name: String,
     description: String,
     member: String,
-    startdate: Date,
-    enddate: Date,
+    deadline: Date,
     budget: Number,
     status: String,
-    image: String,
-    link: String,
+    document: String,
     date: Date,
 })
 

@@ -191,4 +191,40 @@ const signupController = async (req, res) => {
   res.redirect("/admin/add_employee");
 };
 
-export { assigntask, signupController };
+const createProject = async (req, res) => {
+  try {
+    const { projectname, projectdiscription, projectbudget, projectdeadline, projectmember } = req.body;
+    const document = req.files.document[0];
+    let documentpath = await uploadFile(document, projectname, `${projectname}-document.pdf`);
+    const project = new projectSchema({
+      name: projectname,
+      description: projectdiscription,
+      budget: projectbudget,
+      deadline: projectdeadline,
+      member: projectmember,
+      document: documentpath,
+      date: new Date(),
+    });
+    const result = await project.save();
+    const token = req.cookies.datatoken;
+    if (!token) {
+      return res.redirect("/login");
+    }
+    try {
+      const decoded = jwt.verify(token, secret);
+      const adminUser = await userSchema.findById(decoded.id);
+      if (adminUser) {
+        adminUser.project.push(result._id);
+        await adminUser.save();
+      }
+    } catch (err) {
+      console.log("error in creating project", err);
+    }
+  }
+  catch (err) {
+    console.log("error in creating project", err);
+  }
+
+}
+
+export { assigntask, signupController, createProject };
