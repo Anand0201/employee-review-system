@@ -2,6 +2,7 @@ import express from "express";
 import { configDotenv } from "dotenv";
 import verifyToken from "../utils/verifytoken.js";
 import userSchema from "../models/user.js";
+import projectSchema from "../models/project.js";
 import getBase64FromFirebase from "../utils/imageconvert.js";
 import { loginController } from "../controllers/controller.js";
 
@@ -72,8 +73,21 @@ viewrouter.get('/admin/task', verifyToken,async (req, res) => {
 });
 
 viewrouter.get('/admin/project', verifyToken,async (req, res) => {
-    res.render('admin/project/project', { user: req.user, image: req.image });
+    try {
+        const populateproject = await req.user.populate('project');
+        res.render('admin/project/project', { user: req.user, image: req.image, Project: populateproject.project });
+    }
+    catch (err) {
+        console.log("Error in populate project", err);
+    }
 });
+
+viewrouter.get('/admin/project_details/:id', verifyToken, async (req, res) => {
+    const proid = req.params.id;
+    const Project = await projectSchema.findOne({ _id: proid });
+    const polulateprojectmember = await Project.populate('member');
+    res.render('admin/project/project_detail', { user: req.user, image: req.image, project: Project })
+})
 
 viewrouter.get('/admin/create_project', verifyToken,async (req, res) => {
     try {
@@ -100,8 +114,10 @@ viewrouter.get('/admin/account', verifyToken, async (req, res) => {
 viewrouter.get('/admin/employee_details/:id', verifyToken, async (req, res) => {
     const empid = req.params.id;
     const User = await userSchema.findOne({ _id: empid });
+    const TotalProject = User.project.length;
+    
     const image = await getBase64FromFirebase(User.img);
-    res.render('admin/employee/employee_detail', { emp: req.user, empimg: req.image,  user: User, Image: image } );
+    res.render('admin/employee/employee_detail', { emp: req.user, empimg: req.image,  user: User, Image: image, Project: TotalProject } );
 });
 
 // GeneralRouter

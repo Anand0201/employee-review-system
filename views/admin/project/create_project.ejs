@@ -498,7 +498,7 @@
 
                                     <h4 class="header-title mb-3">Create Project</h4>
 
-                                    <form>
+                                    <form action="/admin/create_project" method="post" enctype="multipart/form-data">
                                         <div id="progressbarwizard">
 
                                             <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
@@ -534,7 +534,7 @@
                                                             <div class="row mb-3">
                                                                 <label class="col-md-3 col-form-label" for="userName1">Project Name</label>
                                                                 <div class="col-md-9">
-                                                                    <input type="text" class="form-control" id="userName1" name="projectname" value="Enter a project title">
+                                                                    <input type="text" class="form-control" id="userName1" name="projectname" placeholder="Enter a project title">
                                                                 </div>
                                                             </div>
                                                             <div class="row mb-3">
@@ -546,19 +546,19 @@
                                                             <div class="row mb-3">
                                                                 <label class="col-md-3 col-form-label" for="confirm1">Budget</label>
                                                                 <div class="col-md-9">
-                                                                    <input type="text" id="project-budget" class="form-control" name="projectbudget" placeholder="Enter project budget">
+                                                                    <input type="text" id="project-budget" class="form-control" name="projectbudget" placeholder="Enter project budget" required>
                                                                 </div>
                                                             </div>
                                                             <div class="row mb-3">
                                                                 <label class="col-md-3 col-form-label" for="userName1">Deadline</label>
                                                                 <div class="col-md-9">
-                                                                    <input type="date" class="form-control" id="userName1" name="projectdeadline" value="Enter a project title">
+                                                                    <input type="date" class="form-control" id="userName1" name="projectdeadline" required>
                                                                 </div>
                                                             </div>
                                                             <div class="row mb-3">
                                                                 <label class="col-md-3 col-form-label" for="confirm1">Team Members</label>
                                                                 <div class="col-md-9">
-                                                                    <select class="form-control select2" name="projectmember" multiple data-toggle="select2">
+                                                                    <select class="form-control select2" name="projectmember" multiple data-toggle="select2" required>
                                                                         <option>Select</option>
                                                                         <% User.forEach((user) => { %>
                                                                             <option value="<%= user._id %>"><%= user.name %></option>
@@ -584,17 +584,17 @@
                                                             <div class="row mb-3">
                                                                 <label class="col-md-3 col-form-label" for="surname1">Upload Document</label>
                                                                 <div class="col-md-9">
-                                                                    <input type="file" name="projectdocument" id="example-fileinput" class="form-control">
+                                                                    <input type="file" name="projectdocument" id="example-fileinput" class="form-control" required>
                                                                 </div>
                                                             </div>
                                                         </div> <!-- end col -->
                                                     </div> <!-- end row -->
                                                     <ul class="pager wizard mb-0 list-inline">
                                                         <li class="previous list-inline-item">
-                                                            <button type="button" class="btn btn-light"><i class="mdi mdi-arrow-left me-1"></i> Back to Account</button>
+                                                            <button type="button" class="btn btn-light"><i class="mdi mdi-arrow-left me-1"></i> Back </button>
                                                         </li>
                                                         <li class="next list-inline-item float-end">
-                                                            <button type="button" class="btn btn-info">Add More Info <i class="mdi mdi-arrow-right ms-1"></i></button>
+                                                            <button type="button" class="btn btn-info"> Next <i class="mdi mdi-arrow-right ms-1"></i></button>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -606,12 +606,9 @@
                                                                 <h2 class="mt-0"><i class="mdi mdi-check-all"></i></h2>
                                                                 <h3 class="mt-0">Thank you !</h3>
 
-                                                                <p class="w-75 mb-2 mx-auto">Quisque nec turpis at urna dictum luctus. Suspendisse convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                                                    mattis dictum aliquet.</p>
-
                                                                 <div class="mb-3">
                                                                     <div class="form-check d-inline-block">
-                                                                        <input type="checkbox" class="form-check-input" id="customCheck3">
+                                                                        <input type="checkbox" class="form-check-input" id="customCheck3" required>
                                                                         <label class="form-check-label" for="customCheck3">I agree with the Terms and Conditions</label>
                                                                     </div>
                                                                 </div>
@@ -623,7 +620,7 @@
                                                             <button type="button" class="btn btn-light"><i class="mdi mdi-arrow-left me-1"></i> Back to Profile</button>
                                                         </li>
                                                         <li class="next list-inline-item float-end">
-                                                            <button type="button" class="btn btn-info">Submit</button>
+                                                            <button type="submit" class="btn btn-info">Submit</button>
                                                         </li>
                                                     </ul>
                                                 </div>

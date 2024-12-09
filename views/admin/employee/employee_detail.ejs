@@ -568,7 +568,7 @@
 
                                                         <ul class="mb-0 list-inline text-light">
                                                             <li class="list-inline-item me-3">
-                                                                <h5 class="mb-1 text-white">0</h5>
+                                                                <h5 class="mb-1 text-white"><%= Project %></h5>
                                                                 <p class="mb-0 font-13 text-white-50">Total Project</p>
                                                             </li>
                                                             <li class="list-inline-item">
@@ -594,7 +594,7 @@
                             <!-- Personal-Information -->
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title mt-0 mb-3">Seller Information</h4>
+                                    <h4 class="header-title mt-0 mb-3">Employee Information</h4>
 
                                     <div class="text-start">
                                         <p class="text-muted"><strong>Full Name :</strong> <span class="ms-2"><%= user.name %></span></p>
@@ -623,11 +623,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title mb-3">Projects</h4>
-                                    <div dir="ltr">
-                                        <div style="height: 260px;" class="chartjs-chart">
-                                            <canvas id="high-performing-product"></canvas>
-                                        </div>
-                                    </div>
+                                    <div class="col-sm-6 mb-3 d overflow-y-scroll ">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="header-title"><a href="/">Project Name</a></h4>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Project Description</h5>
+                                            </div> <!-- end card-body -->
+                                        </div> <!-- end card -->
+                                    </div> <!-- end col -->
                                 </div>
                             </div>
                             <!-- End Chart-->
@@ -637,9 +640,8 @@
                                     <div class="card tilebox-one">
                                         <div class="card-body">
                                             <i class="ri-shopping-basket-2-line float-end text-muted"></i>
-                                            <h6 class="text-muted text-uppercase mt-0">Orders</h6>
+                                            <h6 class="text-muted text-uppercase mt-0">Project</h6>
                                             <h2 class="m-b-20">1,587</h2>
-                                            <span class="badge bg-primary"> +11% </span> <span class="text-muted">From previous period</span>
                                         </div> <!-- end card-body-->
                                     </div> <!--end card-->
                                 </div><!-- end col -->
@@ -650,7 +652,6 @@
                                             <i class="ri-archive-line float-end text-muted"></i>
                                             <h6 class="text-muted text-uppercase mt-0">Revenue</h6>
                                             <h2 class="m-b-20">$<span>46,782</span></h2>
-                                            <span class="badge bg-danger"> -29% </span> <span class="text-muted">From previous period</span>
                                         </div> <!-- end card-body-->
                                     </div> <!--end card-->
                                 </div><!-- end col -->
@@ -661,7 +662,6 @@
                                             <i class="ri-vip-diamond-line float-end text-muted"></i>
                                             <h6 class="text-muted text-uppercase mt-0">Product Sold</h6>
                                             <h2 class="m-b-20">1,890</h2>
-                                            <span class="badge bg-primary"> +89% </span> <span class="text-muted">Last year</span>
                                         </div> <!-- end card-body-->
                                     </div> <!--end card-->
                                 </div><!-- end col -->

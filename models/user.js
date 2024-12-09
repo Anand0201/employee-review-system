@@ -14,7 +14,7 @@ const user = new Schema({
     type: { type: String },
     department: { type: String },
     dateofhire: { type: String },
-    project: [{ type: String }],
+    project: [{ type: Schema.Types.ObjectId, ref: "Project" }],
     status: { type: String, enum: ['active', 'inactive'], default: 'active' },
     img: { type: String },
     resume: { type: String },

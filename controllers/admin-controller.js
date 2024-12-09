@@ -1,6 +1,7 @@
 // controllers/userController.js
 import userSchema from "../models/user.js";
 import taskSchema from "../models/task.js";
+import projectSchema from "../models/project.js";
 import jwt from "jsonwebtoken";
 import firebase from "firebase-admin";
 import service from "../config/firebase.js";
@@ -192,10 +193,33 @@ const signupController = async (req, res) => {
 };
 
 const createProject = async (req, res) => {
+
+  const uploadfile = async (file, username, filename) => {
+    const upload = firebase.storage().bucket();
+    const fileBuffer = file.buffer;
+    const docuser = upload.file(`User/${username}/${filename}`);
+    await docuser.save(fileBuffer, {
+      metadata: {
+        contentType: file.mimetype,
+      },
+      public: true,
+    });
+  
+    const expirationDate = new Date();
+    expirationDate.setFullYear(expirationDate.getFullYear() + 5);
+  
+    const docurl = await docuser.getSignedUrl({
+      action: 'read',
+      expires: expirationDate,
+    })
+    return docurl[0]; 
+  };
+
   try {
     const { projectname, projectdiscription, projectbudget, projectdeadline, projectmember } = req.body;
-    const document = req.files.document[0];
-    let documentpath = await uploadFile(document, projectname, `${projectname}-document.pdf`);
+    const document = req.files.projectdocument[0];
+    let documentpath = await uploadfile(document, projectname, `${projectname}-document.pdf`);
+    console.log("Document : ", documentpath);
     const project = new projectSchema({
       name: projectname,
       description: projectdiscription,
@@ -206,11 +230,29 @@ const createProject = async (req, res) => {
       date: new Date(),
     });
     const result = await project.save();
+
+    const userids = String(projectmember).split(",");
+
+    const uploadprojectid = (userids) => {
+      userids.map(async (id) => {
+        for (const id of userids) {
+          const user = await userSchema.findById(id);
+          if (user) {
+            user.project.push(result._id);
+            await user.save();
+          }
+        }
+      });
+    }
+
+    await uploadprojectid(userids);
+
     const token = req.cookies.datatoken;
     if (!token) {
       return res.redirect("/login");
     }
     try {
+      const secret = process.env.JWTSECRET;
       const decoded = jwt.verify(token, secret);
       const adminUser = await userSchema.findById(decoded.id);
       if (adminUser) {
@@ -220,6 +262,7 @@ const createProject = async (req, res) => {
     } catch (err) {
       console.log("error in creating project", err);
     }
+    res.redirect("/admin/project");
   }
   catch (err) {
     console.log("error in creating project", err);
