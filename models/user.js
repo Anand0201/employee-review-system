@@ -11,6 +11,7 @@ const user = new Schema({
     employee: [{ type: Schema.Types.ObjectId, ref: "User" }],
     role: { type: String, required: true, enum: ['employee', 'admin'], default: 'employee', required: true, },
     position: { type: String },
+    salary: { type: String },
     type: { type: String },
     department: { type: String },
     dateofhire: { type: String },
